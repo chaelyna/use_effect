@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Timer from "Timer";
+import Timer from "./Timer";
 import './App.css';
 
 // 정리 작업은 리소스를 해제하거나 이벤트를 제거하는 데 사용
@@ -8,9 +8,11 @@ function App() {
   const [showTimer, setShowTimer] = useState(true);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div>
       <h1>React Timer</h1>
+
       {showTimer && <Timer />} {/* 타이머 컴포넌트 표시 여부 */}
+
       <button onClick={() => setShowTimer(!showTimer)}>
         {showTimer ? "Remove Timer" : "Show Timer"}
       </button>
